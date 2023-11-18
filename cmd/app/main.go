@@ -5,13 +5,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-func main() {
-	router := gin.Default()
-	router.GET("/notes", rest.GetNotes)
-	router.GET("/notes/:id", rest.GetNoteByID)
-	router.POST("/notes", rest.PostNote)
-	router.PUT("/notes/:id", rest.PutNote)
-	router.DELETE("/notes/:id", rest.DeleteNote)
+func setupRouter() *gin.Engine {
+	r := gin.Default()
+	r.GET("/notes", rest.GetNotes)
+	r.GET("/notes/:id", rest.GetNoteByID)
+	r.POST("/notes", rest.PostNote)
+	r.PUT("/notes/:id", rest.PutNote)
+	r.DELETE("/notes/:id", rest.DeleteNote)
+	return r
+}
 
-	router.Run("localhost:8080")
+func main() {
+	r := setupRouter()
+	r.Run(":8080")
 }
