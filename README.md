@@ -1,7 +1,21 @@
 # note-taking-app-api-gin
 
 - [note-taking-app-api-gin](#note-taking-app-api-gin)
+  - [Run](#run)
+  - [Run tests](#run-tests)
   - [The task from ChatGPT](#the-task-from-chatgpt)
+
+## Run
+
+```bash
+go run cmd/app/main.go
+```
+
+## Run tests
+
+```bash
+go test ./...
+```
 
 ## The task from ChatGPT
 
